@@ -14,6 +14,7 @@ body{
     font-size: 16px;
     line-height: 1.5;
     background: #fff;
+    overflow-x: hidden;
 }
 
 a{
@@ -77,6 +78,13 @@ img{
     width: 70%;
     margin-bottom: 20px;
 }
+.hero .hero-button a{
+    margin-right: 10px;
+}
+.hero .hero-button .custom-icon {
+    margin-right: 8px;
+    vertical-align: middle;
+}
 /* Video section */
 
 .video{
@@ -117,9 +125,13 @@ img{
 /* Pricing */
 .pricing .pricing-grid{
     display: grid;
+    align-items: center;
     grid-template-columns: repeat(2,1fr);
     gap: 30px;
     margin-top: 50px;
+}
+.pricing .pricing-grid .card{
+    padding: 40px;
 }
 
 .pricing .pricing-card-subheading{
@@ -132,10 +144,93 @@ img{
     border-bottom: 1px solid #ccc;
 }
 
+.pricing .pricing-card-body ul{
+    line-height: 1.7rem
+}
+.pricing .pricing-card-body a{
+    margin-top: 20px;
+}
+
+.pricing .pricing-card-body ul li{
+    display: flex;
+    padding: 5px 0;
+}
+.pricing .pricing-card-body ul li i{
+    padding-right: 8px;
+    margin-top: 6px;
+}
+.pricing .pricing-footer{
+    margin-top: 40px;
+}
+.pricing .container-sm .view-feature{
+    margin-top: 10px;
+}
+
+/*FAQ*/
+
+.faq{
+    padding:40px 0;
+}
+
+.faq .faq-group{
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+}
+
+.faq .faq-group .faq-group-header{
+    padding:20px 0;
+    margin-bottom: 15px;
+    position: relative;
+}
+.faq .faq-group .faq-group-header h4{
+    font-weight: 600;
+    width: 95%;
+}
+.faq .faq-group .faq-group-header i{
+    position: absolute;
+    right: 0;
+    top: 40px;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.faq .faq-group .faq-group-body{
+    display: none;
+}
+.faq .faq-group .faq-group-body.open{
+    display: block;
+}
+
+.faq ul.faq-menu{
+    max-width:400px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ddd;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+
+}
+
+.faq ul.faq-menu li {
+    padding: 10px 20px;
+    border-radius: 5px;
+   text-align: center;
+}
+
+.faq ul.faq-menu li.active{
+    background: var(--primary-color);
+    color: white;
+}
+
 /*Utility class*/
 
 .container{
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 15px;
 }
@@ -166,6 +261,7 @@ img{
     border-radius: 10px;
     cursor: pointer;
     transition: 0.5s;
+    text-align:center;
 }
 .btn:hover{
     opacity: 0.8;
@@ -241,4 +337,186 @@ img{
     background: var(--black-color);
     color: #fff;
 }
+
+/*Tabs*/
+input[type="radio"] {
+    display: none;
+}
+
+input[type="radio"]:checked + label {
+    background: #3b82f6;
+    color: white;
+    font-weight: bold;
+}
+
+/*Footer*/
+
+.footer{
+    padding: 40px 0;
+}
+.footer h4{
+    margin-bottom:10px;
+}
+.footer ul li {
+    line-height: 2.5;
+}
+
+.footer ul li a{
+    color: #ccc;
+}
+
+.footer i {
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+
+.footer-grid{
+    display: grid;
+    grid-template-columns: 2fr repeat(3,1fr);
+    gap:30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer .card{
+    margin: 20px 30px 30px 0;
+}
+
+.footer input[type='email'] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 20px 0;
+}
+
+/*Hamburger*/
+
+.hamburger-button{
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1000;
+}
+
+
+.hamburger-button .hamburger-line{
+    width: 30px;
+    height: 3px;
+    background: #333;
+    margin: 6px 0;
+}
+/*Mobile menu*/
+
+.mobile-menu{
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 250px;
+    height: 100%;
+    z-index: 100;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    transition: right 0.3s ease-in-out;
+}
+
+.mobile-menu ul{
+    margin-top: 100px;
+    padding-right: 10px;
+}
+
+.mobile-menu ul li{
+    margin: 10px 0;
+}
+
+.mobile-menu ul li a {
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+.mobile-menu.active{
+    right: 0;
+}
+
+/*Media query*/
+
+@media(max-width: 960px){
+    .text-xxl{
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 670px) {
+    .navbar .main-menu{
+        display: none;
+    }
+    .navbar .hamburger-button{
+        display: block;
+    }
+
+    .hero .container {
+        background: url('../images/hero-bg-mobile.png') no-repeat;
+        background-size: 350px 400px;
+        background-position: bottom;
+        height: 770px;
+    }
+
+    .hero .hero-content,
+    .hero .hero-text{
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero .hero-button .btn{
+        margin-bottom:10px;
+        display: block;
+        width: 100%;
+    }
+
+
+    .testimonial .testimonial-heading{
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .testimonial .testimonial-grid, .pricing .pricing-grid,
+    .footer .footer-grid
+    {
+        grid-template-columns: 1fr;
+    }
+
+    .footer .card{
+        margin-right: 0;
+    }
+
+    .footer .footer-grid > div {
+        text-align: center;
+    }
+
+/*    Text*/
+    .text-xl{
+        font-size: 1.9rem;
+    }
+    .text-lg{
+        font-size: 1.5rem;
+    }
+
+    .text-md{
+        font-size: 1.1rem;
+    }
+
+
+}
+
+@media (max-width: 500px) {
+    .text-xxl{
+        font-size: 2rem;
+    }
+}
+
+
+
+
 
